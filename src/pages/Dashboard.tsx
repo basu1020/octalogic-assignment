@@ -1,12 +1,13 @@
+import { Courses } from "@/layouts/Courses"
 import Sidebar from "../components/Sidebar"
-import Home from "../components/Home"
+// import Home from "../layouts/Home"
 
 const Dashboard = () => {
     return (
       <>
       <div className="flex flex-row">
           <Sidebar/>
-          <Home/>
+          <Courses />
       </div>
       </>
     )
