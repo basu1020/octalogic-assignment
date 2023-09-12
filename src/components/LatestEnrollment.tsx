@@ -35,7 +35,7 @@ export const LatestEnrollment: React.FC = () => {
                 <Table className="bg-white rounded-lg">
                     <TableHeader>
                         <TableRow >
-                            <TableHead className="">Enr. No</TableHead>
+                            <TableHead>Enr. No</TableHead>
                             <TableHead>S.Name</TableHead>
                             <TableHead>C.Name</TableHead>
                             <TableHead >Fees</TableHead>
@@ -46,13 +46,13 @@ export const LatestEnrollment: React.FC = () => {
                         {courseInvoices.map((elem, index) => {
                             return (
                         <TableRow key={index}>
-                            <TableCell className="font-medium items-center">
+                            <TableCell>
                                 {elem.invoiceId}
                                 </TableCell>
-                            <TableCell>{elem.studentName}</TableCell>
+                            <TableCell className="text-center">{elem.studentName}</TableCell>
                             <TableCell>{elem.courseName} </TableCell>
                             <TableCell >{elem.feesPaid}</TableCell>
-                            <TableCell>{elem.enrollmentDate}</TableCell>
+                            <TableCell >{elem.enrollmentDate}</TableCell>
                         </TableRow>
                             )
                         })}

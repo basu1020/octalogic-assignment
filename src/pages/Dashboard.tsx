@@ -1,6 +1,5 @@
 import { Courses } from "@/layouts/Courses"
 import Sidebar from "../components/Sidebar"
-// import Home from "../layouts/Home"
 
 const Dashboard = () => {
     return (
