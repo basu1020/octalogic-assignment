@@ -24,10 +24,12 @@ export const DropdownMenuArchive: React.FC<DropDownMenuArchivedProps> = ({ index
         appContext.setAppInfo({
             ...appContext.appInfo,
             data: {
-              ...appContext.appInfo.data,
-              courseData: updatedCourseData,
+                ...appContext.appInfo.data,
+                courseData: updatedCourseData,
             },
-          });
+        });
+
+        localStorage.setItem('appInfo', JSON.stringify(appContext.appInfo))
     }
 
     return (

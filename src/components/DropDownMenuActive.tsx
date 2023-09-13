@@ -28,6 +28,8 @@ export const DropDownMenuActive: React.FC<DropDownMenuActiveProps> = ({ index })
         courseData: updatedCourseData,
       },
     });
+
+    localStorage.setItem('appInfo', JSON.stringify(appContext.appInfo))
   }
 
   const onClickArchive = () => {
@@ -42,6 +44,8 @@ export const DropDownMenuActive: React.FC<DropDownMenuActiveProps> = ({ index })
         courseData: updatedCourseData,
       },
     });
+
+    localStorage.setItem('appInfo', JSON.stringify(appContext.appInfo))
   }
 
   return (

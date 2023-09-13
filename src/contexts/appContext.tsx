@@ -55,7 +55,7 @@ const defaultState = {
     setCurrTab: (currTab: CurrTab) => { },
     appInfo: {
         data: info
-    } ,
+    },
     setAppInfo: (appInfo: AppInfo) => { }
 } as AppContextInterface
 
@@ -72,6 +72,8 @@ export default function AppProvider({ children }: AppProviderProps) {
     const [appInfo, setAppInfo] = useState<AppInfo>({
         data: info
     })
+
+    localStorage.setItem('appInfo', JSON.stringify(appInfo))
 
     return (
         <AppContext.Provider value={{ currTab, setCurrTab, appInfo, setAppInfo }}>

@@ -4,9 +4,11 @@ import HomeVector from "../assets/Home-Vector.svg"
 import CoursesVector from "../assets/ic_outline-queue-music.svg"
 import LogoutVector from "../assets/Logout-logo.svg"
 import { AppContext } from '@/contexts/appContext'
+import { useNavigate } from 'react-router-dom'
 
 export const Sidebar: React.FC = () => {
     const appContext = useContext(AppContext)
+    const navigate = useNavigate()
 
     const selectedClass = "flex flex-col cursor-pointer items-center w-[54px] justify-center my-2 bg-pink-300 p-1 border rounded-lg text-[#901E75] text-xs"
 
@@ -41,7 +43,10 @@ export const Sidebar: React.FC = () => {
                     </div>
                 </div>
                 <div className="flex items-center justify-center">
-                    <div className="flex flex-col items-center w-[54px] justify-center my-2 p-1">
+                    <div className="flex flex-col items-center w-[54px] justify-center my-2 p-1 cursor-pointer" onClick={() => {
+                        localStorage.setItem('dashboard-loggedIn', 'false')
+                        navigate("/")
+                    }}>
                         <img src={LogoutVector} alt="home-logo" />
                         <p className='text-gray-500 text-xs'>
                             Logout

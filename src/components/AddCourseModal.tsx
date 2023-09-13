@@ -57,7 +57,8 @@ export const AddCourseModal: React.FC = () => {
                   courseData: updatedCourseData,
                 },
               });
-
+              
+            localStorage.setItem('appInfo', JSON.stringify(appContext.appInfo))
             // You can do something with the newCourse object here,
             // such as sending it to a server or updating your state.
 
