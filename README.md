@@ -7,3 +7,8 @@
 ![Screenshot (85)](https://github.com/basu1020/octalogic-assignment/assets/106004070/2b2ba3ed-0a50-44a3-a2e8-cc953b38f36f)
 ![Screenshot (86)](https://github.com/basu1020/octalogic-assignment/assets/106004070/5f5d6a12-b8d9-4e1b-8cd6-ddc348e2fb28)
 ![Screenshot (87)](https://github.com/basu1020/octalogic-assignment/assets/106004070/db9d6258-a595-4448-9879-bb83f15a656e)
+
+
+# Video Link 
+
+https://drive.google.com/file/d/14vpOBzfPKiuYfnZEpw-7Yyx57ZT_karC/view?usp=sharing
