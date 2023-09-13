@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import {
     Table,
     TableBody,
@@ -7,17 +7,12 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { AppContext } from "@/contexts/appContext";
 
 export const LatestEnrollment: React.FC = () => {
-    const courseInvoices = [
-        { invoiceId: 'NV001', studentName: 'John Doe', courseName: 'Percussion', feesPaid: '$250.00', enrollmentDate: '12-08-2023' },
-        { invoiceId: 'NV002', studentName: 'Jane Smith', courseName: 'Guitar', feesPaid: '$200.00', enrollmentDate: '11-15-2023' },
-        { invoiceId: 'NV003', studentName: 'Bob Johnson', courseName: 'Piano', feesPaid: '$300.00', enrollmentDate: '10-22-2023' },
-        { invoiceId: 'NV004', studentName: 'Alice Brown', courseName: 'Violin', feesPaid: '$275.00', enrollmentDate: '09-05-2023' },
-        { invoiceId: 'NV005', studentName: 'Ella Wilson', courseName: 'Saxophone', feesPaid: '$275.00', enrollmentDate: '08-30-2023' }
-      ];
-      
-
+    const appContext = useContext(AppContext)
+    const courseInvoices = appContext.appInfo.data.latestInvoices
+    
     return (
         <>
             <div className="w-11/12 flex flex-col justify-center items-center my-3">

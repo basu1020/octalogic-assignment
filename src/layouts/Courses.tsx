@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import {
   Table,
   TableBody,
@@ -15,120 +15,12 @@ import { MoreVertical } from 'lucide-react';
 import { AddCourseModal } from "@/components/AddCourseModal"
 import { DropDownMenuActive } from "@/components/DropDownMenuActive"
 import { DropdownMenuArchive } from "@/components/DropDownMenuArchive"
+import { AppContext } from "@/contexts/appContext"
 
 export const Courses: React.FC = () => {
-  const courseData = [
-    {
-      Name: 'Piano',
-      Description: 'Learn the fundamentals of playing the piano.',
-      Instructor: 'John Smith',
-      Instrument: 'Piano',
-      dayOfWeek: 'Monday',
-      noOfStudents: 15,
-      Price: '$200.00',
-      Status: 'Active',
-      Actions: 'Enroll'
-    },
-    {
-      Name: 'Guitar',
-      Description: 'Introduction to playing the guitar for beginners.',
-      Instructor: 'Jane Doe',
-      Instrument: 'Guitar',
-      dayOfWeek: 'Wednesday',
-      noOfStudents: 12,
-      Price: '$180.00',
-      Status: 'Active',
-      Actions: 'Enroll'
-    },
-    {
-      Name: 'Drumming',
-      Description: 'Master advanced drumming techniques.',
-      Instructor: 'Mike Johnson',
-      Instrument: 'Percussion',
-      dayOfWeek: 'Tuesday',
-      noOfStudents: 10,
-      Price: '$250.00',
-      Status: 'Active',
-      Actions: 'Enroll'
-    },
-    {
-      Name: 'Violin',
-      Description: 'Start your journey into playing the violin.',
-      Instructor: 'Sarah Brown',
-      Instrument: 'Violin',
-      dayOfWeek: 'Thursday',
-      noOfStudents: 8,
-      Price: '$220.00',
-      Status: 'Closed',
-      Actions: 'Enroll'
-    },
-    {
-      Name: 'Saxophone',
-      Description: 'Become a saxophone virtuoso with this course.',
-      Instructor: 'David Wilson',
-      Instrument: 'Saxophone',
-      dayOfWeek: 'Friday',
-      noOfStudents: 10,
-      Price: '$280.00',
-      Status: 'Closed',
-      Actions: 'Enroll'
-    },
-    {
-      Name: 'Piano Techniques',
-      Description: 'Take your piano skills to the next level.',
-      Instructor: 'Emily White',
-      Instrument: 'Piano',
-      dayOfWeek: 'Wednesday',
-      noOfStudents: 12,
-      Price: '$280.00',
-      Status: 'Active',
-      Actions: 'Enroll'
-    },
-    {
-      Name: 'Flute',
-      Description: 'Learn the basics of playing the flute.',
-      Instructor: 'Michael Green',
-      Instrument: 'Flute',
-      dayOfWeek: 'Monday',
-      noOfStudents: 14,
-      Price: '$210.00',
-      Status: 'Archived',
-      Actions: 'Enroll'
-    },
-    {
-      Name: 'Guitar',
-      Description: 'Explore the world of electric guitar playing.',
-      Instructor: 'Susan Davis',
-      Instrument: 'Guitar',
-      dayOfWeek: 'Thursday',
-      noOfStudents: 9,
-      Price: '$220.00',
-      Status: 'Archived',
-      Actions: 'Enroll'
-    },
-    {
-      Name: 'Drum Solo',
-      Description: 'Learn to perform captivating drum solos.',
-      Instructor: 'Daniel Jackson',
-      Instrument: 'Percussion',
-      dayOfWeek: 'Tuesday',
-      noOfStudents: 7,
-      Price: '$270.00',
-      Status: 'Archived',
-      Actions: 'Enroll'
-    },
-    {
-      Name: 'Trumpet Essentials',
-      Description: 'Master the essential skills of playing the trumpet.',
-      Instructor: 'Laura Anderson',
-      Instrument: 'Trumpet',
-      dayOfWeek: 'Wednesday',
-      noOfStudents: 11,
-      Price: '$230.00',
-      Status: 'Active',
-      Actions: 'Enroll'
-    }
-  ];
+  const appContext = useContext(AppContext)
+  const courseData = appContext.appInfo.data.courseData
+
   return (
     <>
       <div className="p-2 bg-gray-200 w-[95vw] min-h-[100vh] flex items-center justify-center">
@@ -191,8 +83,8 @@ export const Courses: React.FC = () => {
                         <Badge className="bg-gray-300 text-gray-700 rounded-sm">{elem.Status}
                         </Badge>
                       </TableCell> : ""}
-                      <TableCell className="text-right flex justify-center">{elem.Status === 'Active' ? <DropDownMenuActive/> : ""}
-                      {elem.Status === 'Archived' ? <DropdownMenuArchive/> : ""}
+                      <TableCell className="text-right flex justify-center">{elem.Status === 'Active' ? <DropDownMenuActive index={index}/> : ""}
+                      {elem.Status === 'Archived' ? <DropdownMenuArchive index={index}/> : ""}
                       {elem.Status === 'Closed' ? <MoreVertical className="text-gray-300 rounded-lg" /> : ""}
                       </TableCell>
                     </TableRow>

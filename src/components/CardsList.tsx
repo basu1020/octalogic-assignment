@@ -1,34 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 import { CardComponent } from "./CardComponent"
+import { AppContext } from "@/contexts/appContext"
 
 export const CardsListComponent: React.FC = () => {
-    const dataOverview = [
-        {
-            name: "164",
-            description: "total number of students"
-        },
-        {
-            name: "12",
-            description: "total number of courses"
-        },
-        {
-            name: "$2000",
-            description: "total amount earned"
-        },
-        {
-            name: "Guitar",
-            description: "best performing course"
-        },
-        {
-            name: "Flute",
-            description: "worst performing course"
-        }
-    ]
+    const appContext = useContext(AppContext)
+    const cardsList = appContext.appInfo.data.cardsList
+
     return (
         <>
-            <div className="flex flex-col justify-center items-center">
-                <div className="flex flex-row items-center justify-center">
-                    {dataOverview.map((elem, index) => {
+            <div className="flex flex-col justify-center w-full items-center">
+                <div className="flex flex-row w-11/12 items-center justify-evenly">
+                    {cardsList.map((elem, index) => {
                         return <CardComponent name={elem.name} description={elem.description} key={index} />
                     })}
                 </div>

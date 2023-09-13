@@ -1,0 +1,215 @@
+{
+    "courseData": [
+        {
+            "Name": "Piano",
+            "Description": "Learn the fundamentals of playing the piano.",
+            "Instructor": "John Smith",
+            "Instrument": "Piano",
+            "dayOfWeek": "Monday",
+            "noOfStudents": 15,
+            "Price": "$200.00",
+            "Status": "Active",
+            "Actions": "Enroll"
+        },
+        {
+            "Name": "Guitar",
+            "Description": "Introduction to playing the guitar for beginners.",
+            "Instructor": "Jane Doe",
+            "Instrument": "Guitar",
+            "dayOfWeek": "Wednesday",
+            "noOfStudents": 12,
+            "Price": "$180.00",
+            "Status": "Active",
+            "Actions": "Enroll"
+        },
+        {
+            "Name": "Drumming",
+            "Description": "Master advanced drumming techniques.",
+            "Instructor": "Mike Johnson",
+            "Instrument": "Percussion",
+            "dayOfWeek": "Tuesday",
+            "noOfStudents": 10,
+            "Price": "$250.00",
+            "Status": "Active",
+            "Actions": "Enroll"
+        },
+        {
+            "Name": "Violin",
+            "Description": "Start your journey into playing the violin.",
+            "Instructor": "Sarah Brown",
+            "Instrument": "Violin",
+            "dayOfWeek": "Thursday",
+            "noOfStudents": 8,
+            "Price": "$220.00",
+            "Status": "Closed",
+            "Actions": "Enroll"
+        },
+        {
+            "Name": "Saxophone",
+            "Description": "Become a saxophone virtuoso with this course.",
+            "Instructor": "David Wilson",
+            "Instrument": "Saxophone",
+            "dayOfWeek": "Friday",
+            "noOfStudents": 10,
+            "Price": "$280.00",
+            "Status": "Closed",
+            "Actions": "Enroll"
+        },
+        {
+            "Name": "Piano Techniques",
+            "Description": "Take your piano skills to the next level.",
+            "Instructor": "Emily White",
+            "Instrument": "Piano",
+            "dayOfWeek": "Wednesday",
+            "noOfStudents": 12,
+            "Price": "$280.00",
+            "Status": "Active",
+            "Actions": "Enroll"
+        },
+        {
+            "Name": "Flute",
+            "Description": "Learn the basics of playing the flute.",
+            "Instructor": "Michael Green",
+            "Instrument": "Flute",
+            "dayOfWeek": "Monday",
+            "noOfStudents": 14,
+            "Price": "$210.00",
+            "Status": "Archived",
+            "Actions": "Enroll"
+        },
+        {
+            "Name": "Guitar",
+            "Description": "Explore the world of electric guitar playing.",
+            "Instructor": "Susan Davis",
+            "Instrument": "Guitar",
+            "dayOfWeek": "Thursday",
+            "noOfStudents": 9,
+            "Price": "$220.00",
+            "Status": "Archived",
+            "Actions": "Enroll"
+        },
+        {
+            "Name": "Drum Solo",
+            "Description": "Learn to perform captivating drum solos.",
+            "Instructor": "Daniel Jackson",
+            "Instrument": "Percussion",
+            "dayOfWeek": "Tuesday",
+            "noOfStudents": 7,
+            "Price": "$270.00",
+            "Status": "Archived",
+            "Actions": "Enroll"
+        },
+        {
+            "Name": "Trumpet Essentials",
+            "Description": "Master the essential skills of playing the trumpet.",
+            "Instructor": "Laura Anderson",
+            "Instrument": "Trumpet",
+            "dayOfWeek": "Wednesday",
+            "noOfStudents": 11,
+            "Price": "$230.00",
+            "Status": "Active",
+            "Actions": "Enroll"
+        }
+    ],
+    "latestInvoices": [
+        {
+            "invoiceId": "NV001",
+            "studentName": "John Doe",
+            "courseName": "Percussion",
+            "feesPaid": "$250.00",
+            "enrollmentDate": "12-08-2023"
+        },
+        {
+            "invoiceId": "NV002",
+            "studentName": "Jane Smith",
+            "courseName": "Guitar",
+            "feesPaid": "$200.00",
+            "enrollmentDate": "11-15-2023"
+        },
+        {
+            "invoiceId": "NV003",
+            "studentName": "Bob Johnson",
+            "courseName": "Piano",
+            "feesPaid": "$300.00",
+            "enrollmentDate": "10-22-2023"
+        },
+        {
+            "invoiceId": "NV004",
+            "studentName": "Alice Brown",
+            "courseName": "Violin",
+            "feesPaid": "$275.00",
+            "enrollmentDate": "09-05-2023"
+        },
+        {
+            "invoiceId": "NV005",
+            "studentName": "Ella Wilson",
+            "courseName": "Saxophone",
+            "feesPaid": "$275.00",
+            "enrollmentDate": "08-30-2023"
+        }
+    ],
+    "bestStudents": [
+        {
+            "RegNo": "1001",
+            "FName": "John",
+            "LName": "Doe",
+            "CourseNo": "101",
+            "TotalFees": "$250.00",
+            "RegDate": "2023-09-10"
+        },
+        {
+            "RegNo": "1002",
+            "FName": "Jane",
+            "LName": "Smith",
+            "CourseNo": "102",
+            "TotalFees": "$200.00",
+            "RegDate": "2023-09-12"
+        },
+        {
+            "RegNo": "1003",
+            "FName": "Bob",
+            "LName": "Johnson",
+            "CourseNo": "103",
+            "TotalFees": "$300.00",
+            "RegDate": "2023-09-14"
+        },
+        {
+            "RegNo": "1004",
+            "FName": "Alice",
+            "LName": "Brown",
+            "CourseNo": "104",
+            "TotalFees": "$275.00",
+            "RegDate": "2023-09-16"
+        },
+        {
+            "RegNo": "1005",
+            "FName": "Ella",
+            "LName": "Wilson",
+            "CourseNo": "105",
+            "TotalFees": "$275.00",
+            "RegDate": "2023-09-18"
+        }
+    ],
+    "cardsList": [
+        {
+            "name": "164",
+            "description": "total number of students"
+        },
+        {
+            "name": "12",
+            "description": "total number of courses"
+        },
+        {
+            "name": "$2000",
+            "description": "total amount earned"
+        },
+        {
+            "name": "Guitar",
+            "description": "best performing course"
+        },
+        {
+            "name": "Flute",
+            "description": "worst performing course"
+        }
+    ]
+}

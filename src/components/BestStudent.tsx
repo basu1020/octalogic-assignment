@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 
 import {
     Table,
@@ -8,16 +8,12 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { AppContext } from "@/contexts/appContext";
 
 export const BestStudents: React.FC = () => {
-    const courseInvoices = [
-        { invoiceId: 'NV001', studentName: 'John Doe', courseName: 'Percussion', feesPaid: '$250.00', enrollmentDate: '12-08-2023' },
-        { invoiceId: 'NV002', studentName: 'Jane Smith', courseName: 'Guitar', feesPaid: '$200.00', enrollmentDate: '11-15-2023' },
-        { invoiceId: 'NV003', studentName: 'Bob Johnson', courseName: 'Piano', feesPaid: '$300.00', enrollmentDate: '10-22-2023' },
-        { invoiceId: 'NV004', studentName: 'Alice Brown', courseName: 'Violin', feesPaid: '$275.00', enrollmentDate: '09-05-2023' },
-        { invoiceId: 'NV005', studentName: 'Ella Wilson', courseName: 'Saxophone', feesPaid: '$275.00', enrollmentDate: '08-30-2023' }
-      ];
-      
+
+    const appContext = useContext(AppContext)
+    const courseInvoices = appContext.appInfo.data.bestStudents
 
     return (
         <>
@@ -36,27 +32,27 @@ export const BestStudents: React.FC = () => {
                 <Table className="bg-white rounded-lg">
                     <TableHeader>
                         <TableRow >
-                            <TableHead className="">Enr. No</TableHead>
-                            <TableHead>S.Name</TableHead>
-                            <TableHead>C.Name</TableHead>
-                            <TableHead >Fees</TableHead>
-                            <TableHead>Enr. Date</TableHead>
+                            <TableHead className="">Reg. No.</TableHead>
+                            <TableHead>F.Name</TableHead>
+                            <TableHead>L.Name</TableHead>
+                            <TableHead >Course #</TableHead>
+                            <TableHead>Total Fees</TableHead>
+                            <TableHead>Reg.Date</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {courseInvoices.map((elem, index) => {
                             return (
-                        <TableRow>
-                            <TableCell className="font-medium items-center">
-                                <p>
-                                {elem.invoiceId}
-                                </p>
-                                </TableCell>
-                            <TableCell>{elem.studentName}</TableCell>
-                            <TableCell>{elem.courseName} </TableCell>
-                            <TableCell >{elem.feesPaid}</TableCell>
-                            <TableCell>{elem.enrollmentDate}</TableCell>
-                        </TableRow>
+                                <TableRow key={index}>
+                                    <TableCell className="font-medium items-center">
+                                        {elem.RegNo}
+                                    </TableCell>
+                                    <TableCell>{elem.FName}</TableCell>
+                                    <TableCell>{elem.LName} </TableCell>
+                                    <TableCell >{elem.CourseNo}</TableCell>
+                                    <TableCell>{elem.TotalFees}</TableCell>
+                                    <TableCell>{elem.RegDate}</TableCell>
+                                </TableRow>
                             )
                         })}
                     </TableBody>

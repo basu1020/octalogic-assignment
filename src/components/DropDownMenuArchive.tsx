@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -8,8 +8,28 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 import { MoreVertical } from 'lucide-react';
+import { AppContext } from "@/contexts/appContext";
 
-export const DropdownMenuArchive: React.FC = () => {
+interface DropDownMenuArchivedProps {
+    index: number;
+}
+
+export const DropdownMenuArchive: React.FC<DropDownMenuArchivedProps> = ({ index }) => {
+    const appContext = useContext(AppContext)
+
+    const onClickUnArchive = () => {
+        const updatedCourseData = [...appContext.appInfo.data.courseData]; // Create a copy of courseData
+        updatedCourseData[index].Status = "Active"; // Update the Status of the specific course
+
+        appContext.setAppInfo({
+            ...appContext.appInfo,
+            data: {
+              ...appContext.appInfo.data,
+              courseData: updatedCourseData,
+            },
+          });
+    }
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger>
@@ -17,7 +37,7 @@ export const DropdownMenuArchive: React.FC = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Unarchive Course</DropdownMenuItem>
+                <DropdownMenuItem onClick={onClickUnArchive}>Unarchive Course</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )
